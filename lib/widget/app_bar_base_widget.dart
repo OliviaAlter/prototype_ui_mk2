@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prototype_ui_mk2/home/homepage.dart';
+import 'package:prototype_ui_mk2/login/login.dart';
 
 import '../profile/profile.dart';
 
@@ -19,6 +20,22 @@ AppBar buildAppBarProfile(BuildContext context){
         );
       },
     ),
+    actions: [
+      TextButton(
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const LoginScreen()),
+          );
+        },
+        child: const Text("Logout",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontSize: 15,
+              color: Colors.black87
+          ),
+        ),
+      ),
+    ],
   );
 }
 

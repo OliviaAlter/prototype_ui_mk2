@@ -50,9 +50,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          const SizedBox(
-            width: 12,
-          )
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
