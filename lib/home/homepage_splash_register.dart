@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import '../home/homepage.dart';
 
 class HomePageSplash extends StatefulWidget {
@@ -55,7 +55,14 @@ class _HomePageSplashState extends State<HomePageSplash> {
                   fontSize: 17)
               ),
               const SizedBox(
-                  height: 250
+                height: 50,
+              ),
+              const SpinKitPumpingHeart(
+                color: Colors.pinkAccent,
+                size: 90.0,
+              ),
+              const SizedBox(
+                  height: 200
               ),
             ],
           ),

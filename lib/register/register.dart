@@ -21,7 +21,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController = TextEditingController();
 
-
   @override
   Widget build(BuildContext context) {
 
@@ -131,11 +130,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget> [
                       SizedBox(
-                        height: 180,
+                        height: 160,
                         child: Image.asset("assets/images/a.jpg", fit: BoxFit.contain,),
                       ),
                       const SizedBox(
-                        height: 17,
+                        height: 10,
+                      ),
+                      const SizedBox(
+                        height: 30,
+                        child: Text("Register an account",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.blueGrey,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 15,
                       ),
                       emailField,
                       const SizedBox(

@@ -64,15 +64,15 @@ class _HomePageState extends State<HomePage> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(LineIcons.home),
-            label: "News",
+            label: "",
           ),
           BottomNavigationBarItem(
             icon: Icon(LineIcons.handHoldingHeart),
-            label: "Search",
+            label: "",
           ),
           BottomNavigationBarItem(
             icon: Icon(LineIcons.heartbeat),
-            label: "History",
+            label: "",
           ),
         ],
       ),
