@@ -49,7 +49,7 @@ class _UserProfileState extends State<UserProfile>{
         user.name,
         style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
       ),
-      const SizedBox(height: 4),
+      const SizedBox(height: 10),
       Text(
         user.email,
         style: const TextStyle(fontWeight: FontWeight.normal, fontSize: 16, color: Colors.black87),

@@ -12,9 +12,9 @@ class NumbersWidget extends StatelessWidget {
         buildDivider(),
         buildText(context, 'Joined', 'April 2018'),
         buildDivider(),
-        //buildText(context, 'Donation  ', 'holder'),
+        buildText(context, 'Charities joined  ', '3'),
         //buildDivider(),
-        //buildText(context, 'holder', 'holder'),
+        buildText(context, 'Total donation ', '23'),
       ],
     ),
   );

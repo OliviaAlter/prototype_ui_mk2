@@ -44,28 +44,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
       );
     }
 
-    Widget buildRowRegister(String firstText, String childText) {
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget> [
-          Text(firstText),
-          GestureDetector(onTap: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => const RegisterScreen()),
-            );
-          },
-            child: Text(childText,
-              style: const TextStyle(
-              color: Colors.blueGrey,
-              fontWeight: FontWeight.bold,
-              fontSize: 17),
-            ),
-          ),
-        ],
-      );
-    }
-
     Widget buildRowLogin(String firstText, String childText) {
       return Row(
         mainAxisAlignment: MainAxisAlignment.center,

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:prototype_ui_mk2/profile/profile.dart';
 
+import '../charity/charity_event_detail.dart';
+import '../charity_activities/org_view_charity.dart';
 import '../donation_news/donation_event.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,8 +16,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    const Donation(), // news
-    Container(), //search -> sub-screen : donation -> food / assets donation
+    const Donation(),
+    const EventOnGoing(),
+    //const TestRun(),
     Container(), //
   ];
 
@@ -39,18 +42,6 @@ class _HomePageState extends State<HomePage> {
             );
           },
         ),
-        actions: [
-          TextButton(
-            onPressed: () {  }, 
-            child: const Text("See all",
-              textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 18,
-              color: Colors.white
-              ),
-            ),
-          ),
-        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,

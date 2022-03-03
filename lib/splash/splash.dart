@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import '../home/homepage.dart';
 
@@ -42,9 +43,9 @@ class Splash extends StatefulWidget {
                       SizedBox(
                         height: 20.0,
                       ),
-                      CircleAvatar(
-                        radius: 45.0,
-                        child: Text('Donation'),
+                      SpinKitPumpingHeart(
+                        color: Colors.lightBlueAccent,
+                        size: 90.0,
                       ),
                       SizedBox(
                         height: 440,

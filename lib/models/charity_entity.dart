@@ -4,7 +4,10 @@ class Charity{
   final String description;
   final String imageUrl;
   final String address;
-  final String ongoingEvent;
+  final String organizer;
+  final String startDate;
+  final String endDate;
+  final double totalRaised;
 
   const Charity({
     required this.id,
@@ -12,7 +15,10 @@ class Charity{
     required this.description,
     required this.imageUrl,
     required this.address,
-    required this.ongoingEvent
+    required this.organizer,
+    required this.startDate,
+    required this.endDate,
+    required this.totalRaised
   });
 }
 

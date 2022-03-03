@@ -27,11 +27,11 @@ AppBar buildAppBarProfile(BuildContext context){
             MaterialPageRoute(builder: (context) => const LoginScreen()),
           );
         },
-        child: const Text("Logout",
+        child: const Text("Log out",
           textAlign: TextAlign.center,
           style: TextStyle(
-              fontSize: 15,
-              color: Colors.black87
+              fontSize: 17,
+              color: Colors.blueGrey
           ),
         ),
       ),
@@ -55,6 +55,19 @@ AppBar buildAppBarProfileEditMode(BuildContext context){
         );
       },
     ),
+  );
+}
+
+AppBar buildAppBarSearch(BuildContext context){
+  return AppBar(
+    centerTitle: true,
+    title: const Text("Charity organizations",
+      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+    ),
+    automaticallyImplyLeading: false,
+    backgroundColor: Colors.lightBlueAccent,
+    elevation: 1,
+    toolbarHeight: 55,
   );
 }
 

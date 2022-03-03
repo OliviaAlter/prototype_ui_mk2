@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prototype_ui_mk2/login/login.dart';
 
-import '../home/homepage_splash_login.dart';
-import '../register/register.dart';
-
 class ForgetPasswordScreen extends StatefulWidget {
   const ForgetPasswordScreen({Key? key}) : super(key: key);
 
@@ -132,7 +129,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                       ),
                       buildRowSignIn("","Already have an account ?"),
                       const SizedBox(
-                          height: 10
+                          height: 15
                       ),
                       buildRowSignIn("","Sign in"),
                       const SizedBox(

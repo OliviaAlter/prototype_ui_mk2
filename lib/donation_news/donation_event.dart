@@ -9,35 +9,34 @@ class Donation extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Container(
-            margin: const EdgeInsets.all(15),
-            height: 200,
-            width: 400,
-            child: ListView(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                const SizedBox(width: 20),
-                Image.asset("assets/images/a.jpg", height: 100, width: 100,),
-                const SizedBox(width: 20),
-                Image.asset("assets/images/a.jpg", height: 100, width: 100,),
-                const SizedBox(width: 20),
-                Image.asset("assets/images/a.jpg", height: 100, width: 100,),
-                const SizedBox(width: 20),
-                Image.asset("assets/images/a.jpg", height: 100, width: 100,),
-                const SizedBox(width: 20),
-                Image.asset("assets/images/a.jpg", height: 100, width: 100,),
-                const SizedBox(width: 20),
-                Image.asset("assets/images/a.jpg", height: 100, width: 100,),
-                const SizedBox(width: 20),
-                Image.asset("assets/images/a.jpg", height: 100, width: 100,),
-              ],
+            margin: const EdgeInsets.all(5),
+            height: 222,
+            child: SizedBox(
+              child: Container(
+                margin: const EdgeInsets.all(15),
+                height: 200,
+                width: 350,
+                child: Image.asset(
+                  "assets/images/a.png",
+                  fit: BoxFit.fitWidth,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 25,
+            child: Text("Featured charities",
+                style: TextStyle(
+                    color: Colors.blueGrey,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20)
             ),
           ),
           Container(
             margin: const EdgeInsets.all(15),
-            height: 290,
+            height: 600,
             width: 400,
-            child: ListView(
+            child: Column(
               children: <Widget>[
                 buildListViewEventForCharity(),
                 buildListViewEventForCharity(),
