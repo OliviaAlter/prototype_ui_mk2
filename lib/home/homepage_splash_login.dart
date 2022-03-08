@@ -26,7 +26,7 @@ class _HomePageSplashState extends State<HomePageSplash> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Welcome back!"),
+        title: const Text("Welcome !"),
         centerTitle: true,
         automaticallyImplyLeading: false,
         backgroundColor: const Color(0xFFe53547),
