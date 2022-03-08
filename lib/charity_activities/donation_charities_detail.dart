@@ -18,58 +18,61 @@ class _CharityEventDetailScreen extends State<CharityEventDetail> {
   @override
   Widget build(BuildContext context) {
 
-    final donateButton = Material(
-      elevation: 5,
-      borderRadius: BorderRadius.circular(30),
-      color: const Color(0xFFe53547),
-      child: MaterialButton(
-        padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-        minWidth: MediaQuery.of(context).size.width,
-        onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(builder: (context)
-            => CharityEventDonate(url)),
-          );
-        },
-        child: const Text("Login",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              fontSize: 26,
-              color: Color(0xFFfaedef),
-              fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
-
-
-    return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: const Text("Test",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                fontSize: 20
+    final donateButton =
+    SizedBox(
+        width: 100,
+        child: Material(
+          elevation: 5,
+          borderRadius: BorderRadius.circular(30),
+          color: const Color(0xFFe53547),
+          child: MaterialButton(
+            minWidth: 100,
+            padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context)
+                => CharityEventDonate(url)),
+              );
+            },
+            child: const Text("Donate",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 26,
+                  color: Color(0xFFfaedef),
+                  fontWeight: FontWeight.bold),
             ),
           ),
-          automaticallyImplyLeading: true,
-          backgroundColor: const Color(0xFFe53547),
-          elevation: 1,
-          toolbarHeight: 55,
+        )
+    );
+
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text("Test",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontSize: 20
+          ),
         ),
-        body: ListView(
-          physics: const BouncingScrollPhysics(),
-          children: [
-            const SizedBox(height: 15),
-            Image.network(url,
-                fit: BoxFit.cover,
-                width: 250,
-                height: 250),
-            const SizedBox(height: 20),
-            buildAboutCharityDemo(),
-            const SizedBox(height: 50),
-            donateButton
-          ],
-        ),
+        automaticallyImplyLeading: true,
+        backgroundColor: const Color(0xFFe53547),
+        elevation: 1,
+        toolbarHeight: 55,
+      ),
+      body: ListView(
+        physics: const BouncingScrollPhysics(),
+        children: [
+          const SizedBox(height: 15),
+          Image.network(url,
+              fit: BoxFit.cover,
+              width: 250,
+              height: 250),
+          const SizedBox(height: 20),
+          buildAboutCharityDemo(),
+          const SizedBox(height: 25),
+          donateButton
+        ],
+      ),
     );
   }
 }

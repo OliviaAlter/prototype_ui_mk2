@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prototype_ui_mk2/home/homepage.dart';
+import 'package:prototype_ui_mk2/login/login.dart';
 
 import '../login/login_nav.dart';
 import '../profile/profile.dart';
@@ -30,7 +31,7 @@ AppBar buildAppBarProfile(BuildContext context){
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(builder: (context)
-            => const SignupHelper()),
+            => const LoginScreen()),
           );
         },
         child: const Text("Log out",

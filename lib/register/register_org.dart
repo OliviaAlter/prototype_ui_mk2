@@ -114,10 +114,10 @@ class _RegisterOrgScreenState extends State<RegisterOrgScreen> {
                     ),
                     const SizedBox(
                       height: 40,
-                      child: Text("Create new organization",
+                      child: Text("Create organization's account",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            fontSize: 30,
+                            fontSize: 28,
                             color: Color(0xFFec94a4),
                             fontWeight: FontWeight.bold),
                       ),

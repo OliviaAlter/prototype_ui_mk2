@@ -29,16 +29,12 @@
 
 
 
-
-
-
-
 Ổng muốn 1 cái app cho:
 
 Register :
     (Làm 1 cái nav bar)
     -> new account
-    -> Register admin
+    -> Register org account
     -> Register donation (charity)
 
 - Donate-r:
@@ -59,13 +55,10 @@ Register :
     Track donation : Sub screen của (3)
         + Action
 
-- Admin:
-    Admin login/logout
-    Admin's dashboard (1)
+- Org account:
+    Org account login/logout
+    Org account's dashboard (1)
     Create donation (2) List-view
     List donation pending / end :
         + Edit donation info
 
-
-Button màu hường same same logo
-AppBar màu hướng same same logo

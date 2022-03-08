@@ -42,13 +42,13 @@ class _HomePageSplashState extends State<HomePageSplash> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget> [
               SizedBox(
-                height: 200,
+                height: 250,
                 child: Image.asset("assets/images/a.jpg", fit: BoxFit.contain),
               ),
               const SizedBox(
                 height: 20,
               ),
-              const Text("Slogan insert here",
+              const Text("Welcome back!",
                   style: TextStyle(
                       color: Colors.blueGrey,
                       fontWeight: FontWeight.bold,
