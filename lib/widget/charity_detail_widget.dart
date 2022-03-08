@@ -14,7 +14,7 @@ class DetailCharity extends StatelessWidget{
       appBar: AppBar(
         title: Text(charityDetailList.name),
         automaticallyImplyLeading: true,
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: const Color(0xFFe53547),
         elevation: 1,
         toolbarHeight: 55,),
       body: ListView(

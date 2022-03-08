@@ -63,7 +63,8 @@ class _EditProfilePageStage extends State<EditProfilePage>{
                 child: const Text(
                   "Save", textAlign: TextAlign.center,
                   style: TextStyle(
-                      color: Colors.blueAccent, fontWeight: FontWeight.bold, fontSize: 20),
+                      color: Color(0xFFdb7b86),
+                      fontWeight: FontWeight.bold, fontSize: 20),
                 ))
         ),
       ],

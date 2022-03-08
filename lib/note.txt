@@ -1,16 +1,71 @@
 1 screen cho login :
+
 1 screen cho register :
+
 2 screens cho user :
+
 -> 1 người dùng tham gia event
 -> 1 người đi chi giùm cho event
-2 screen cho event :
--> 1 cho mạnh thường quân :
-    -> số tiền cần chi, số quà cần mua , sẽ có người nào đi theo , sẽ có lịch trình phát quà giờ nào , những thứ cần mua .
--> 1 cho user
-    -> xem lịch trình event aka người xài sẽ lên coi sự kiện , chụp hình các tứ, chi tiêu, phát cho ai giờ nào ,ngày nào , thể hiện minh bạch cho chủ sở hữu
+
+2 màn hình cho từ thiện :
+
+-> 1 cho mạnh thường quân / tổ chức :
+    -> số tiền cần chi, số quà cần mua , sẽ có người nào đi theo , sẽ có lịch trình phát quà giờ nào,
+    những thứ cần mua .
+
+-> 1 cho donator
+    -> xem lịch trình event aka người xài sẽ lên coi sự kiện , chụp hình các tứ,
+    chi tiêu, phát cho ai giờ nào ,ngày nào, thể hiện minh bạch cho chủ sở hữu
+
 2 screen cho history event :
+
 -> 1 cho mạnh thường quân / người tổ chức :
     -> ghi lại history của event
+
 -> 1 cho user :
     -> xem lại toàn bộ lịch trình + số phần mình đóng góp
+
 1 user profile : (cho vui + logout)
+
+
+
+
+
+
+
+Ổng muốn 1 cái app cho:
+
+Register :
+    (Làm 1 cái nav bar)
+    -> new account
+    -> Register admin
+    -> Register donation (charity)
+
+- Donate-r:
+    Login/Logout
+
+    Donate-r's dashboard (1)
+
+    (Slider thể hiện event nổi bật -> click ra detail)
+
+    Get all current donation : (2) List-view
+        + Filter : joined or not / name
+
+    Donation's detail : Sub screen của (2)
+        + Info
+        + Donate button -> support donation (trang mới để từ thiện)
+
+    Get all old charities / donation joined (3)
+    Track donation : Sub screen của (3)
+        + Action
+
+- Admin:
+    Admin login/logout
+    Admin's dashboard (1)
+    Create donation (2) List-view
+    List donation pending / end :
+        + Edit donation info
+
+
+Button màu hường same same logo
+AppBar màu hướng same same logo

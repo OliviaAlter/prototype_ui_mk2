@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../basic_data/charity_event_data.dart';
 import '../models/charity_entity.dart';
-import '../profile/profile.dart';
 import '../widget/charity_detail_widget.dart';
 
 late List<Charity> charityDetailList;
@@ -44,30 +43,20 @@ class _EventOnGoingState extends State<EventOnGoing>{
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
-          Container(
-            margin: const EdgeInsets.all(5),
-            height: 222,
-            child: SizedBox(
-              child: Container(
-                margin: const EdgeInsets.all(15),
-                height: 200,
-                width: 350,
-                child: Image.asset(
-                  "assets/images/a.png",
-                  fit: BoxFit.fitWidth,
-                ),
-              ),
-            ),
-          ),
+          /*
           const SizedBox(
             height: 25,
+          ),
+          const SizedBox(
+            height: 28,
             child: Text("Featured charities",
                 style: TextStyle(
-                    color: Colors.blueGrey,
+                    color: Color(0xFFb70b16),
                     fontWeight: FontWeight.bold,
-                    fontSize: 20)
+                    fontSize: 22)
             ),
           ),
+          */
           Container(
             margin: const EdgeInsets.all(25),
             height: 600,

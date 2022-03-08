@@ -4,14 +4,14 @@ import 'package:prototype_ui_mk2/login/login.dart';
 import '../home/homepage_splash_register.dart';
 import '../login/login_nav.dart';
 
-class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+class RegisterOrgScreen extends StatefulWidget {
+  const RegisterOrgScreen({Key? key}) : super(key: key);
 
   @override
-  _RegisterScreenState createState() => _RegisterScreenState();
+  _RegisterOrgScreenState createState() => _RegisterOrgScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _RegisterOrgScreenState extends State<RegisterOrgScreen> {
 
   // form key
   final _formKey = GlobalKey<FormState>();
@@ -67,8 +67,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
       );
     }
 
-    final emailField = buildTextField("Email", emailController, false);
-    final nameField = buildTextField("Name", nameController, false);
+    final emailField = buildTextField("Organization email", emailController, false);
+    final nameField = buildTextField("Organization name", nameController, false);
     final passwordField = buildTextField("Confirm password", passwordController, true);
     final confirmPasswordField = buildTextField("Password", confirmPasswordController, true);
 
@@ -95,67 +95,67 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
 
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: Center(
-          child: SingleChildScrollView(
-            child: Container(
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(15),
-                child: Form(
-                  key: _formKey,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget> [
-                      SizedBox(
-                        height: 160,
-                        child: Image.asset("assets/images/a.jpg", fit: BoxFit.contain,),
+      backgroundColor: Colors.white,
+      body: Center(
+        child: SingleChildScrollView(
+          child: Container(
+            color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.all(15),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget> [
+                    SizedBox(
+                      height: 160,
+                      child: Image.asset("assets/images/a.jpg", fit: BoxFit.contain,),
+                    ),
+                    const SizedBox(
+                      height: 40,
+                      child: Text("Create new organization",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 30,
+                            color: Color(0xFFec94a4),
+                            fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(
-                        height: 40,
-                        child: Text("Create new account",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 30,
-                              color: Color(0xFFec94a4),
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 25,
-                      ),
-                      emailField,
-                      const SizedBox(
-                        height: 17,
-                      ),
-                      nameField,
-                      const SizedBox(
-                        height: 17,
-                      ),
-                      passwordField,
-                      const SizedBox(
-                        height: 17,
-                      ),
-                      confirmPasswordField,
-                      const SizedBox(
-                        height: 25,
-                      ),
-                      signupButton,
-                      const SizedBox(
-                        height: 25,
-                      ),
-                      buildRowLogin("","Already have an account ?"),
-                      const SizedBox(
-                          height: 15
-                      ),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    emailField,
+                    const SizedBox(
+                      height: 17,
+                    ),
+                    nameField,
+                    const SizedBox(
+                      height: 17,
+                    ),
+                    passwordField,
+                    const SizedBox(
+                      height: 17,
+                    ),
+                    confirmPasswordField,
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    signupButton,
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    buildRowLogin("","Already have an account ?"),
+                    const SizedBox(
+                        height: 15
+                    ),
+                  ],
                 ),
               ),
             ),
           ),
         ),
+      ),
     );
   }
 }

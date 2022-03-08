@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prototype_ui_mk2/login/login_nav.dart';
 
 import '../forget_password/forget_password.dart';
 import '../home/homepage_splash_login.dart';
@@ -12,6 +13,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
   // form key
   final _formKey = GlobalKey<FormState>();
 
@@ -23,7 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
 
-    Widget buildTextField(String text, Icon icon, TextEditingController controller, bool obscureTextOrNot) {
+    Widget buildTextField(String text, TextEditingController controller, bool obscureTextOrNot) {
       return TextFormField(
           autofocus: false,
           controller: controller,
@@ -31,17 +33,17 @@ class _LoginScreenState extends State<LoginScreen> {
           onSaved: (value) {
             controller.text = value!;
           },
-            textInputAction: TextInputAction.next,
-            decoration: InputDecoration(
-            prefixIcon: icon ,
-            contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+          textInputAction: TextInputAction.next,
+          decoration: InputDecoration(
+              contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
               hintText: text,
               border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(10),
+              )
           )
-        )
       );
     }
+
 
     Widget buildRowRegister(String firstText, String childText) {
       return Row(
@@ -51,14 +53,16 @@ class _LoginScreenState extends State<LoginScreen> {
           Text(firstText),
           GestureDetector(onTap: () {
             Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => const RegisterScreen()),
+              MaterialPageRoute(builder: (context)
+              => const SignupHelper()),
             );
           },
             child: Text(childText,
               style: const TextStyle(
-                color: Colors.blueGrey,
-                fontWeight: FontWeight.bold,
-                fontSize: 17),
+                  color: Color(0xFFec94a4),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18
+              ),
             ),
           ),
         ],
@@ -73,40 +77,42 @@ class _LoginScreenState extends State<LoginScreen> {
           Text(firstText),
           GestureDetector(onTap: () {
             Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => const ForgetPasswordScreen()),
+              MaterialPageRoute(builder: (context)
+              => const ForgetPasswordScreen()),
             );
           },
             child: Text(childText,
               style: const TextStyle(
-                  color: Colors.blueGrey,
+                  color: Color(0xFFec94a4),
                   fontWeight: FontWeight.bold,
-                  fontSize: 17),
+                  fontSize: 18),
             ),
           ),
         ],
       );
     }
 
-    final emailField = buildTextField("Email", const Icon(Icons.mail), emailController, false);
-    final passwordField = buildTextField("Password", const Icon(Icons.key), passwordController, true);
+    final emailField = buildTextField("Email", emailController, false);
+    final passwordField = buildTextField("Password", passwordController, true);
 
     final loginButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
-      color: Colors.lightBlueAccent,
+      color: const Color(0xFFe53547),
       child: MaterialButton(
         padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
         onPressed: () {
           Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const HomePageSplash()),
+            MaterialPageRoute(builder: (context)
+            => const HomePageSplash()),
           );
         },
         child: const Text("Login",
           textAlign: TextAlign.center,
           style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
+              fontSize: 26,
+              color: Color(0xFFfaedef),
               fontWeight: FontWeight.bold),
         ),
       ),
@@ -131,20 +137,17 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Image.asset("assets/images/a.jpg", fit: BoxFit.contain,),
                       ),
                       const SizedBox(
-                        height: 10,
-                      ),
-                      const SizedBox(
-                        height: 30,
+                        height: 40,
                         child: Text("Login",
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              fontSize: 25,
-                              color: Colors.blueGrey,
+                              fontSize: 35,
+                              color: Color(0xFFec94a4),
                               fontWeight: FontWeight.bold),
                         ),
                       ),
                       const SizedBox(
-                        height: 15,
+                        height: 25,
                       ),
                       emailField,
                       const SizedBox(
@@ -152,7 +155,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       passwordField,
                       const SizedBox(
-                        height: 22,
+                        height: 25,
                       ),
                       loginButton,
                       const SizedBox(
@@ -161,41 +164,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       buildRowForgetPassword("","Forgot your password ?"),
                       const SizedBox(
                           height: 17
-                      ),
-                      Row(
-                        children: const <Widget>[
-                          Expanded(
-                            child: Divider(
-                              color: Colors.blueGrey,
-                              height: 8.0,
-                            ),
-                          ),
-                          SizedBox(
-                            width: 8.0,
-                          ),
-                          Text(
-                            'Or',
-                              style: TextStyle(
-                                color: Colors.blueGrey,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 17)),
-                          SizedBox(
-                            width: 8.0,
-                          ),
-                          Expanded(
-                            child: Divider(
-                              color: Colors.blueGrey,
-                              height: 10.0,
-                            ),
-                          )
-                        ],
-                      ),
-                      const SizedBox(
-                          height: 15
-                      ),
-                      buildRowRegister("","Don't have an account ?"),
-                      const SizedBox(
-                          height: 10
                       ),
                       buildRowRegister("","Sign up"),
                     ],

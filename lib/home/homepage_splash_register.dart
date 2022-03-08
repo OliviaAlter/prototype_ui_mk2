@@ -26,10 +26,10 @@ class _HomePageSplashState extends State<HomePageSplash> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Welcome"),
+        title: const Text("Welcome to our app!"),
         centerTitle: true,
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: const Color(0xFFe53547),
         elevation: 1,
         toolbarHeight: 55,
       ),
@@ -42,7 +42,7 @@ class _HomePageSplashState extends State<HomePageSplash> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget> [
               SizedBox(
-                height: 180,
+                height: 200,
                 child: Image.asset("assets/images/a.jpg", fit: BoxFit.contain),
               ),
               const SizedBox(
@@ -52,14 +52,10 @@ class _HomePageSplashState extends State<HomePageSplash> {
                   style: TextStyle(
                   color: Colors.blueGrey,
                   fontWeight: FontWeight.bold,
-                  fontSize: 17)
+                  fontSize: 19)
               ),
               const SizedBox(
                 height: 50,
-              ),
-              const SpinKitPumpingHeart(
-                color: Colors.pinkAccent,
-                size: 90.0,
               ),
               const SizedBox(
                   height: 200

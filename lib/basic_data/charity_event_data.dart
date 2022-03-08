@@ -1,7 +1,7 @@
 
 import '../models/charity_entity.dart';
 
-String desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum";
+String desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
 
 final allCharitiesDetails = <Charity>[
   Charity(id: 1, name: "Charity A", description: desc, imageUrl: "https://images.squarespace-cdn.com/content/v1/5b5f9fb45b409b45400b06af/1534010051594-9674GZQ5XBIE7EP82GGV/copy.png?format=1000w", address: "HCM", organizer: "place holder", startDate : "11-1-2011", endDate: "11-1-2011", totalRaised: 10000000),

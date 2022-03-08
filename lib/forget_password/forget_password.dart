@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:prototype_ui_mk2/login/login.dart';
 
+import '../login/login_nav.dart';
+
 class ForgetPasswordScreen extends StatefulWidget {
   const ForgetPasswordScreen({Key? key}) : super(key: key);
 
@@ -19,7 +21,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   @override
   Widget build(BuildContext context) {
 
-    Widget buildTextField(String text, Icon icon, TextEditingController controller, bool obscureTextOrNot) {
+    Widget buildTextField(String text,TextEditingController controller, bool obscureTextOrNot) {
       return TextFormField(
           autofocus: false,
           controller: controller,
@@ -29,7 +31,6 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
           },
           textInputAction: TextInputAction.next,
           decoration: InputDecoration(
-              prefixIcon: icon ,
               contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
               hintText: text,
               border: OutlineInputBorder(
@@ -47,12 +48,13 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
           Text(firstText),
           GestureDetector(onTap: () {
             Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => const LoginScreen()),
+              MaterialPageRoute(builder: (context)
+              => const SignupHelper()),
             );
           },
             child: Text(childText,
               style: const TextStyle(
-                  color: Colors.blueGrey,
+                  color: Color(0xFFec94a4),
                   fontWeight: FontWeight.bold,
                   fontSize: 17),
             ),
@@ -61,18 +63,19 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
       );
     }
 
-    final emailField = buildTextField("Email", const Icon(Icons.mail), emailController, false);
+    final emailField = buildTextField("Email", emailController, false);
 
     final resetPasswordButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
-      color: Colors.lightBlueAccent,
+      color: const Color(0xFFe53547),
       child: MaterialButton(
         padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
         onPressed: () {
           Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const LoginScreen()),
+            MaterialPageRoute(builder: (context)
+            => const SignupHelper()),
           );
         },
         child: const Text("Reset",
@@ -104,24 +107,21 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                         child: Image.asset("assets/images/a.jpg", fit: BoxFit.contain,),
                       ),
                       const SizedBox(
-                        height: 10,
-                      ),
-                      const SizedBox(
                         height: 30,
                         child: Text("Reset your password",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 25,
-                              color: Colors.blueGrey,
+                              color: Color(0xFFec94a4),
                               fontWeight: FontWeight.bold),
                         ),
                       ),
                       const SizedBox(
-                        height: 15,
+                        height: 25,
                       ),
                       emailField,
                       const SizedBox(
-                        height: 17,
+                        height: 25,
                       ),
                       resetPasswordButton,
                       const SizedBox(

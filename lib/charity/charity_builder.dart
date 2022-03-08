@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../models/charity_entity.dart';
 
-Widget buildAboutCharity(Charity charity) => Container(
-
+Widget buildAboutCharity(Charity charity)
+=> Container(
     padding: const EdgeInsets.symmetric(horizontal: 40),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,6 +41,43 @@ Widget buildAboutCharity(Charity charity) => Container(
           style: const TextStyle(fontWeight: FontWeight.normal, fontSize: 20, color: Colors.black87, height: 0.8),
         ),
         const SizedBox(height: 30),
+      ],
+    )
+);
+
+Widget buildAboutCharityDemo()
+  => Container(
+    padding: const EdgeInsets.symmetric(horizontal: 40),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: const [
+        Text(
+          "About this charity",
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24, color: Colors.black87),
+          textAlign: TextAlign.center,
+        ),
+        SizedBox(height: 30),
+        Text("Location : ",
+          style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20, color: Colors.black87, height: 0.8),
+          textAlign: TextAlign.center,
+        ),
+        SizedBox(height: 30),
+        Text("Organized by : ",
+          style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20, color: Colors.black87, height: 0.8),
+        ),
+        SizedBox(height: 30),
+        Text("",
+          style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20, color: Colors.black87, height: 0.8),
+        ),
+        SizedBox(height: 30),
+        Text("Start date: ",
+          style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20, color: Colors.black87, height: 0.8),
+        ),
+        SizedBox(height: 30),
+        Text("Total raised : ",
+          style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20, color: Colors.black87, height: 0.8),
+        ),
+        SizedBox(height: 30),
       ],
     )
 );

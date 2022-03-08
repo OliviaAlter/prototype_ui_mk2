@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:prototype_ui_mk2/home/homepage.dart';
-import 'package:prototype_ui_mk2/login/login.dart';
 
+import '../login/login_nav.dart';
 import '../profile/profile.dart';
 
 AppBar buildAppBarProfile(BuildContext context){
   return AppBar(
     centerTitle: true,
-    title: const Text("Profile"),
+    title: const Text("Profile",
+      textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: 20
+      ),
+    ),
     automaticallyImplyLeading: false,
-    backgroundColor: Colors.lightBlueAccent,
+    backgroundColor: const Color(0xFFe53547),
     elevation: 1,
     toolbarHeight: 55,
     leading: IconButton(
@@ -24,14 +29,15 @@ AppBar buildAppBarProfile(BuildContext context){
       TextButton(
         onPressed: () {
           Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const LoginScreen()),
+            MaterialPageRoute(builder: (context)
+            => const SignupHelper()),
           );
         },
         child: const Text("Log out",
           textAlign: TextAlign.center,
           style: TextStyle(
-              fontSize: 17,
-              color: Colors.blueGrey
+              fontSize: 18,
+              color: Color(0xFFfaedef)
           ),
         ),
       ),
@@ -42,9 +48,14 @@ AppBar buildAppBarProfile(BuildContext context){
 AppBar buildAppBarProfileEditMode(BuildContext context){
   return AppBar(
     centerTitle: true,
-    title: const Text("Editing profile"),
+    title: const Text("Editing profile",
+      textAlign: TextAlign.center,
+      style: TextStyle(
+          fontSize: 20
+      ),
+    ),
     automaticallyImplyLeading: false,
-    backgroundColor: Colors.lightBlueAccent,
+    backgroundColor:const Color(0xFFe53547),
     elevation: 1,
     toolbarHeight: 55,
     leading: IconButton(

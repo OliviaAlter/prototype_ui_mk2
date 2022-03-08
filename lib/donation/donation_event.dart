@@ -27,7 +27,7 @@ class Donation extends StatelessWidget {
             height: 25,
             child: Text("Featured charities",
                 style: TextStyle(
-                    color: Colors.blueGrey,
+                    color: Color(0x0ff41324),
                     fontWeight: FontWeight.bold,
                     fontSize: 20)
             ),

@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:prototype_ui_mk2/profile/profile.dart';
 
-import '../charity_activities/org_view_charity.dart';
-import '../charity_activities/donation_charities_slider.dart';
+import '../register/register.dart';
+import '../register/register_org.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class SignupHelper extends StatefulWidget {
+  const SignupHelper({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _SignupHelperState createState() => _SignupHelperState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _SignupHelperState extends State<SignupHelper> {
+  //navigation tab
   int _currentIndex = 0;
   final List<Widget> _children = [
-    const EventOnGoing(),
-    const TestListView(),
-    Container(), //
+    const RegisterScreen(),
+    const RegisterOrgScreen(), //
   ];
 
   void onTabTapped(int index){
@@ -25,25 +25,10 @@ class _HomePageState extends State<HomePage> {
       _currentIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar (
-        backgroundColor: const Color(0xFFe53547),
-        elevation: 1,
-        toolbarHeight: 55,
-        automaticallyImplyLeading: false,
-        actions: <Widget> [
-          IconButton(
-            icon: const Icon(Icons.account_circle_sharp, size : 30),
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const UserProfile()),
-              );
-            },
-          ),
-        ],
-      ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,
         currentIndex: _currentIndex,
@@ -54,10 +39,6 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         iconSize: 30,
         items: const [
-          BottomNavigationBarItem(
-            icon: Icon(LineIcons.home),
-            label: "",
-          ),
           BottomNavigationBarItem(
             icon: Icon(LineIcons.handHoldingHeart),
             label: "",

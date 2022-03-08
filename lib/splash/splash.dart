@@ -43,10 +43,6 @@ class Splash extends StatefulWidget {
                       SizedBox(
                         height: 20.0,
                       ),
-                      SpinKitPumpingHeart(
-                        color: Colors.lightBlueAccent,
-                        size: 90.0,
-                      ),
                       SizedBox(
                         height: 440,
                       ),
