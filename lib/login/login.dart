@@ -3,7 +3,6 @@ import 'package:prototype_ui_mk2/login/login_nav.dart';
 
 import '../forget_password/forget_password.dart';
 import '../home/homepage_splash_login.dart';
-import '../register/register.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -18,7 +17,6 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
 
   // editing controller
-
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 

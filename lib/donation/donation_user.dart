@@ -39,7 +39,7 @@ class _CharityEventDonateScreen extends State<CharityEventDonate> {
       );
     }
 
-    final customField = buildTextField("Email", customAmount, false);
+    final customField = buildTextField("Custom amount", customAmount, false);
     Money donation1 = Money.fromInt(500, code: 'USD');
     Money donation2 = Money.fromInt(1000, code: 'USD');
     Money donation3 = Money.fromInt(2500, code: 'USD');
@@ -78,12 +78,12 @@ class _CharityEventDonateScreen extends State<CharityEventDonate> {
               Row(
                 children: <Widget>[
                   const SizedBox(width: 15),
-                  Container(
+                  SizedBox(
                       height: 60,
                       width: 110,
-                      color: Colors.red,
+                      //color: const Color(0xFFe53547),
                       child: FlatButton(
-                        color: Colors.red,
+                        color:  const Color(0xFFff4d4d),
                         onPressed: () {
                           setState(() {
                             isSelected = !isSelected;
@@ -97,18 +97,17 @@ class _CharityEventDonateScreen extends State<CharityEventDonate> {
                         ),
                         shape: RoundedRectangleBorder(
                           side: BorderSide(
-                              color: isSelected ? const Color(0xFFe53547) : Colors.transparent, width: 1),
+                              color: isSelected ? const Color(0xFFff4d4d) : Colors.transparent, width: 1),
                         ),
                         padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                       )
                   ),
                   const SizedBox(width: 25),
-                  Container(
+                  SizedBox(
                       height: 60,
                       width: 110,
-                      color: Colors.blue,
                       child: FlatButton(
-                        color: Colors.red,
+                        color:  const Color(0xFFff4d4d),
                         onPressed: () {
                           setState(() {
                             isSelected = !isSelected;
@@ -122,18 +121,17 @@ class _CharityEventDonateScreen extends State<CharityEventDonate> {
                         ),
                         shape: RoundedRectangleBorder(
                           side: BorderSide(
-                              color: isSelected ? const Color(0xFFe53547) : Colors.transparent, width: 1),
+                              color: isSelected ? const Color(0xFFff4d4d) : Colors.transparent, width: 1),
                         ),
                         padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                       )
                   ),
                   const SizedBox(width: 25),
-                  Container(
+                  SizedBox(
                       height: 60,
                       width: 110,
-                      color: Colors.black,
                       child: FlatButton(
-                        color: Colors.red,
+                        color:  const Color(0xFFff4d4d),
                         onPressed: () {
                           setState(() {
                             isSelected = !isSelected;
@@ -147,7 +145,7 @@ class _CharityEventDonateScreen extends State<CharityEventDonate> {
                         ),
                         shape: RoundedRectangleBorder(
                           side: BorderSide(
-                              color: isSelected ? const Color(0xFFe53547) : Colors.transparent, width: 1),
+                              color: isSelected ? const Color(0xFFff4d4d) : Colors.transparent, width: 1),
                         ),
                         padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                       )
@@ -158,10 +156,9 @@ class _CharityEventDonateScreen extends State<CharityEventDonate> {
               Row(
                 children: <Widget>[
                   const SizedBox(width: 150),
-                  Container(
+                  SizedBox(
                       height: 60,
                       width: 110,
-                      color: Colors.black,
                       child: FlatButton(
                         color: Colors.red,
                         onPressed: () {

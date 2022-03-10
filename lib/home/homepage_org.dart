@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:prototype_ui_mk2/profile/profile.dart';
 
+import '../charity_activities/donation_charities_slider_org.dart';
 import '../charity_activities/org_view_charity.dart';
-import '../charity_activities/donation_charities_slider.dart';
+import '../profile/profile_org.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomePageOrg extends StatefulWidget {
+  const HomePageOrg({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomePageOrgState createState() => _HomePageOrgState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageOrgState extends State<HomePageOrg> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    const EventSlider(),
-    const EventOnGoing(),
+    const EventSliderOrg(),
+    const CharityOnGoingOrg(),
     Container(), //
   ];
 
@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
       _currentIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +39,7 @@ class _HomePageState extends State<HomePage> {
             icon: const Icon(Icons.account_circle_sharp, size : 30),
             onPressed: () {
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const UserProfile()),
+                MaterialPageRoute(builder: (context) => const UserOrgProfile()),
               );
             },
           ),

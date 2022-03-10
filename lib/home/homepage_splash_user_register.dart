@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../home/homepage_user.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class HomePageSplash extends StatefulWidget {
   const HomePageSplash({Key? key}) : super(key: key);
@@ -26,7 +25,7 @@ class _HomePageSplashState extends State<HomePageSplash> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Welcome !"),
+        title: const Text("Welcome to our app!"),
         centerTitle: true,
         automaticallyImplyLeading: false,
         backgroundColor: const Color(0xFFe53547),
@@ -42,17 +41,17 @@ class _HomePageSplashState extends State<HomePageSplash> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget> [
               SizedBox(
-                height: 250,
+                height: 200,
                 child: Image.asset("assets/images/a.jpg", fit: BoxFit.contain),
               ),
               const SizedBox(
                 height: 20,
               ),
-              const Text("Welcome back!",
+              const Text("Welcome onboard !",
                   style: TextStyle(
-                      color: Colors.blueGrey,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 19)
+                  color: Colors.blueGrey,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 19)
               ),
               const SizedBox(
                 height: 50,

@@ -5,7 +5,7 @@ import '../models/user_entity.dart';
 import '../widget/app_bar_base_widget.dart';
 import '../widget/user_profile_custom_widget.dart';
 import '../widget/user_profile_number_widget.dart';
-import 'edit_profile.dart';
+import 'edit_profile_user.dart';
 
 class UserProfile extends StatefulWidget {
   const UserProfile({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class _UserProfileState extends State<UserProfile>{
     const user = UserPreference.myUser;
 
     return Scaffold(
-      appBar: buildAppBarProfile(context),
+      appBar: buildAppBarUserProfile(context),
       body: ListView(
         physics: const BouncingScrollPhysics(),
         children: [

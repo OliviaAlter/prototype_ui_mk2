@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prototype_ui_mk2/login/login.dart';
 
-import '../home/homepage_splash_register.dart';
-import '../login/login_nav.dart';
+import '../home/homepage_splash_org_register.dart';
 
 class RegisterOrgScreen extends StatefulWidget {
   const RegisterOrgScreen({Key? key}) : super(key: key);
@@ -81,7 +80,7 @@ class _RegisterOrgScreenState extends State<RegisterOrgScreen> {
         minWidth: MediaQuery.of(context).size.width,
         onPressed: () {
           Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const HomePageSplash()),
+            MaterialPageRoute(builder: (context) => const HomePageOrgSplash()),
           );
         },
         child: const Text("Sign up",

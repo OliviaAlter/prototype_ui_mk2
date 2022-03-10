@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 import '../charity/charity_builder.dart';
+import '../charity/charity_event_detail.dart';
 import '../donation/donation_user.dart';
 
 class CharityEventDetail extends StatefulWidget {
   final String url;
   CharityEventDetail(this.url);
+
 
   @override
   _CharityEventDetailScreen createState() => _CharityEventDetailScreen(url);
@@ -18,8 +20,7 @@ class _CharityEventDetailScreen extends State<CharityEventDetail> {
   @override
   Widget build(BuildContext context) {
 
-    final donateButton =
-    SizedBox(
+    final donateButton = SizedBox(
         width: 100,
         child: Material(
           elevation: 5,
@@ -48,7 +49,7 @@ class _CharityEventDetailScreen extends State<CharityEventDetail> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("Test",
+        title: const Text("Details",
           textAlign: TextAlign.center,
           style: TextStyle(
               fontSize: 20
@@ -65,11 +66,48 @@ class _CharityEventDetailScreen extends State<CharityEventDetail> {
           const SizedBox(height: 15),
           Image.network(url,
               fit: BoxFit.cover,
-              width: 250,
-              height: 250),
+              width: 235,
+              height: 235),
           const SizedBox(height: 20),
+          Row(
+            children: <Widget>[
+              const SizedBox(width: 8),
+              SizedBox(
+                width: 60,
+                height: 65,
+                child: Image.asset("assets/images/dollars.png", fit: BoxFit.fitWidth),
+              ),
+              const SizedBox(
+                height: 60,
+                width: 135,
+                child: Text("Remaining days  \n       13 days",
+                    style: TextStyle(
+                        fontSize: 19,
+                        color: Color(0xFFe53547),
+                        height: 1.4,
+                        fontWeight: FontWeight.normal)),
+              ),
+              SizedBox(
+                width: 60,
+                height: 65,
+                child: Image.asset("assets/images/calendar.png", fit: BoxFit.fitWidth),
+              ),
+              const SizedBox(width: 8),
+              const SizedBox(
+                height: 60,
+                width: 135,
+                child: Text("Remaining days  \n       13 days",
+                    style: TextStyle(
+                        fontSize: 19,
+                        color: Color(0xFFe53547),
+                        height: 1.4,
+                        fontWeight: FontWeight.normal)),
+              ),
+            ],
+          ),
+          const SizedBox(height: 45),
           buildAboutCharityDemo(),
-          const SizedBox(height: 25),
+          const SizedBox(height: 20),
           donateButton
         ],
       ),

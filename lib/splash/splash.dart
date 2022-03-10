@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-import '../home/homepage.dart';
+import '../home/homepage_user.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class Splash extends StatefulWidget {
     _navigateToHome() async {
       await Future.delayed(const Duration(seconds: 5), () {});
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => const HomePage()));
+          MaterialPageRoute(builder: (context) => const HomePageUser()));
     }
 
     @override

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import '../home/homepage.dart';
+import 'package:prototype_ui_mk2/home/homepage_org.dart';
+import 'package:prototype_ui_mk2/home/homepage_user.dart';
 
-class HomePageSplash extends StatefulWidget {
-  const HomePageSplash({Key? key}) : super(key: key);
+class ThankYouOrgSplash extends StatefulWidget {
+  const ThankYouOrgSplash({Key? key}) : super(key: key);
 
   @override
-  _HomePageSplashState createState() => _HomePageSplashState();
+  _ThankYouOrgSplashState createState() => _ThankYouOrgSplashState();
 }
 
-class _HomePageSplashState extends State<HomePageSplash> {
+class _ThankYouOrgSplashState extends State<ThankYouOrgSplash> {
   @override
   void initState() {
     super.initState();
@@ -19,14 +19,14 @@ class _HomePageSplashState extends State<HomePageSplash> {
   _navigateToHome() async {
     await Future.delayed(const Duration(seconds: 5), () {});
     Navigator.pushReplacement(context,
-        MaterialPageRoute(builder: (context) => const HomePage()));
+        MaterialPageRoute(builder: (context) => const HomePageOrg()));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Welcome to our app!"),
+        title: const Text("Thank you !"),
         centerTitle: true,
         automaticallyImplyLeading: false,
         backgroundColor: const Color(0xFFe53547),
@@ -42,17 +42,17 @@ class _HomePageSplashState extends State<HomePageSplash> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget> [
               SizedBox(
-                height: 200,
+                height: 250,
                 child: Image.asset("assets/images/a.jpg", fit: BoxFit.contain),
               ),
               const SizedBox(
                 height: 20,
               ),
-              const Text("Welcome onboard !",
+              const Text("Thank you for\n your support !",
                   style: TextStyle(
-                  color: Colors.blueGrey,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 19)
+                      color: Colors.blueGrey,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 19)
               ),
               const SizedBox(
                 height: 50,

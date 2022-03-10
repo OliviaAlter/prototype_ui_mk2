@@ -21,6 +21,7 @@ class _FilterLocalListPageState extends State<TestRun>{
     charityDetailList = allCharitiesDetails;
   }
 
+
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: buildAppBarSearch(context),
@@ -28,7 +29,6 @@ class _FilterLocalListPageState extends State<TestRun>{
       children: <Widget>[
         Expanded(
           child: ListView.builder(
-
               itemCount: charityDetailList.length,
               itemBuilder: (context, index) {
                 final charity = charityDetailList[index];
@@ -39,10 +39,10 @@ class _FilterLocalListPageState extends State<TestRun>{
     ),
   );
 
-  Widget buildCharity(Charity charityLocation, int index)
+  Widget buildCharity(Charity charity, int index)
   => ListTile(
     leading: Image.network(
-      charityLocation.imageUrl,
+      charity.imageUrl,
       fit: BoxFit.cover,
       width: 50,
       height: 50,
@@ -52,7 +52,7 @@ class _FilterLocalListPageState extends State<TestRun>{
           MaterialPageRoute(builder: (context)
           => DetailCharity(charityDetailList: charityDetailList[index])));
     },
-    title: Text(charityLocation.name),
-    subtitle: Text("Charity location : " + charityLocation.address),
+    title: Text(charity.name),
+    subtitle: Text("Charity location : " + charity.address),
   );
 }

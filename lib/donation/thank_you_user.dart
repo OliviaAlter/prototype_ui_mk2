@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import '../home/homepage_user.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:prototype_ui_mk2/home/homepage_user.dart';
 
-class HomePageSplash extends StatefulWidget {
-  const HomePageSplash({Key? key}) : super(key: key);
+class ThankYouUserSplash extends StatefulWidget {
+  const ThankYouUserSplash({Key? key}) : super(key: key);
 
   @override
-  _HomePageSplashState createState() => _HomePageSplashState();
+  _ThankYouUserSplashState createState() => _ThankYouUserSplashState();
 }
 
-class _HomePageSplashState extends State<HomePageSplash> {
+class _ThankYouUserSplashState extends State<ThankYouUserSplash> {
   @override
   void initState() {
     super.initState();
@@ -26,7 +25,7 @@ class _HomePageSplashState extends State<HomePageSplash> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Welcome !"),
+        title: const Text("Thank you !"),
         centerTitle: true,
         automaticallyImplyLeading: false,
         backgroundColor: const Color(0xFFe53547),
@@ -48,7 +47,7 @@ class _HomePageSplashState extends State<HomePageSplash> {
               const SizedBox(
                 height: 20,
               ),
-              const Text("Welcome back!",
+              const Text("Thank you for\n your support !",
                   style: TextStyle(
                       color: Colors.blueGrey,
                       fontWeight: FontWeight.bold,

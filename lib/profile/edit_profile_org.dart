@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:prototype_ui_mk2/profile/profile.dart';
+import 'package:prototype_ui_mk2/profile/profile_org.dart';
+import 'package:prototype_ui_mk2/profile/profile_user.dart';
 
+import '../basic_data/org_user_data.dart';
 import '../basic_data/user_data.dart';
 import '../models/user_entity.dart';
 import '../widget/app_bar_base_widget.dart';
 import '../widget/user_profile_custom_widget.dart';
 import '../widget/user_profile_text_view_widget.dart';
 
-class EditProfilePage extends StatefulWidget {
-  const EditProfilePage({Key? key}) : super(key: key);
+class EditOrgProfilePage extends StatefulWidget {
+  const EditOrgProfilePage({Key? key}) : super(key: key);
 
   @override
-  _EditProfilePageStage createState() => _EditProfilePageStage();
+  _EditOrgProfilePageStage createState() => _EditOrgProfilePageStage();
 }
 
 
-class _EditProfilePageStage extends State<EditProfilePage>{
-  User user = UserPreference.myUser;
+class _EditOrgProfilePageStage extends State<EditOrgProfilePage>{
+  User user = UserOrgPreference.myUser;
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: buildAppBarProfileEditMode(context),
+    appBar: buildAppBarOrgProfileEditMode(context),
     body: ListView(
       padding: const EdgeInsets.symmetric(horizontal: 32),
       physics: const BouncingScrollPhysics(),
@@ -57,7 +59,7 @@ class _EditProfilePageStage extends State<EditProfilePage>{
             child: TextButton(
                 onPressed: () {
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const UserProfile()),
+                    MaterialPageRoute(builder: (context) => const UserOrgProfile()),
                   );
                 },
                 child: const Text(

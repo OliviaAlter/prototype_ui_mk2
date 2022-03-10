@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:prototype_ui_mk2/profile/profile_user.dart';
 
-import '../register/register_user.dart';
-import '../register/register_org.dart';
+import '../charity_activities/donation_charities_slider_user.dart';
+import '../charity_activities/user_view_charity.dart';
 
-class SignupHelper extends StatefulWidget {
-  const SignupHelper({Key? key}) : super(key: key);
+class HomePageUser extends StatefulWidget {
+  const HomePageUser({Key? key}) : super(key: key);
 
   @override
-  _SignupHelperState createState() => _SignupHelperState();
+  _HomePageUserState createState() => _HomePageUserState();
 }
 
-class _SignupHelperState extends State<SignupHelper> {
-  //navigation tab
+class _HomePageUserState extends State<HomePageUser> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    const RegisterScreen(),
-    const RegisterOrgScreen(), //
+    const EventSliderUser(),
+    const CharityOnGoingUser(),
+    Container(), //
   ];
 
   void onTabTapped(int index){
@@ -25,10 +25,25 @@ class _SignupHelperState extends State<SignupHelper> {
       _currentIndex = index;
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar (
+        backgroundColor: const Color(0xFFe53547),
+        elevation: 1,
+        toolbarHeight: 55,
+        automaticallyImplyLeading: false,
+        actions: <Widget> [
+          IconButton(
+            icon: const Icon(Icons.account_circle_sharp, size : 30),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const UserProfile()),
+              );
+            },
+          ),
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,
         currentIndex: _currentIndex,
@@ -39,6 +54,10 @@ class _SignupHelperState extends State<SignupHelper> {
         elevation: 0,
         iconSize: 30,
         items: const [
+          BottomNavigationBarItem(
+            icon: Icon(LineIcons.home),
+            label: "",
+          ),
           BottomNavigationBarItem(
             icon: Icon(LineIcons.handHoldingHeart),
             label: "",

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prototype_ui_mk2/login/login.dart';
 
-import '../home/homepage_splash_register.dart';
+import '../home/homepage_splash_user_register.dart';
 import '../login/login_nav.dart';
 
 class RegisterScreen extends StatefulWidget {
