@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 
-class NumbersWidget extends StatelessWidget {
-  const NumbersWidget({Key? key}) : super(key: key);
+class UserNumbersWidget extends StatelessWidget {
+  const UserNumbersWidget({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context)
-  => IntrinsicHeight(
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        buildDivider(),
-        buildText(context, 'Joined', 'April 2018'),
-        buildDivider(),
-        buildText(context, 'Charities joined  ', '3'),
-        //buildDivider(),
-        buildText(context, 'Total donation ', '23'),
-      ],
-    ),
-  );
+  Widget build(BuildContext context) => IntrinsicHeight(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            buildDivider(),
+            buildText(context, 'Joined', 'April 2018'),
+            buildDivider(),
+            buildText(context, 'Charities joined  ', '3'),
+            //buildDivider(),
+            buildText(context, 'Total donation ', '23'),
+          ],
+        ),
+      );
 
   Widget buildText(BuildContext context, String value, String text)
   => MaterialButton(

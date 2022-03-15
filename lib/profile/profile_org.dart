@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../basic_data/org_user_data.dart';
 import '../models/user_entity.dart';
 import '../widget/app_bar_base_widget.dart';
+import '../widget/org_profile_number_widget.dart';
 import '../widget/user_profile_custom_widget.dart';
-import '../widget/user_profile_number_widget.dart';
 import 'edit_profile_org.dart';
 
 class UserOrgProfile extends StatefulWidget {
@@ -28,15 +28,15 @@ class _UserOrgProfileState extends State<UserOrgProfile>{
             imagePath: user.imagePath,
             onClicked: () {
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (context)
-                => const EditOrgProfilePage()),
+                MaterialPageRoute(
+                    builder: (context) => const EditOrgProfilePage()),
               );
             },
             isEdit: true,
           ),
           const SizedBox(height: 20),
           buildName(user),
-          const NumbersWidget(),
+          const OrgNumbersWidget(),
           const SizedBox(height: 35),
           buildAboutUser(user)
         ],

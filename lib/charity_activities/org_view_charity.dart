@@ -2,12 +2,12 @@ import 'dart:core';
 
 import 'package:flutter/material.dart';
 
-import '../basic_data/charity_event_data.dart';
+import '../basic_data/charity_event_data_org.dart';
 import '../floating_action_button/action_button.dart';
 import '../floating_action_button/expandable_fab.dart';
 import '../models/charity_entity.dart';
+import '../profile/profile_org.dart';
 import '../widget/charity_detail_widget.dart';
-
 
 class CharityOnGoingOrg extends StatefulWidget {
   const CharityOnGoingOrg({Key? key}) : super(key: key);
@@ -25,7 +25,7 @@ class _CharityOnGoingOrgState extends State<CharityOnGoingOrg> with SingleTicker
   @override
   void initState(){
     super.initState();
-    charityList = allCharitiesDetails;
+    charityList = allCharitiesDetailsOrg;
     setState(() {
       filteredList = charityList;
     });
@@ -52,23 +52,46 @@ class _CharityOnGoingOrgState extends State<CharityOnGoingOrg> with SingleTicker
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButton: ExpandableFab(
-            children: [
-              ActionButton(
-                icon: const Icon(Icons.zoom_in_outlined, color: Colors.white,),
-                onPressed: () {
-                },
-              ),
-              ActionButton(
-                icon: const Icon(Icons.settings, color: Colors.white,),
-                onPressed: () {
-                },
-              ),
-              ActionButton(
-                icon: const Icon(Icons.add, color: Colors.white,),
-                onPressed: () {
-                },
-              ),
+        appBar: AppBar(
+          backgroundColor: const Color(0xFFe53547),
+          elevation: 1,
+          toolbarHeight: 55,
+          automaticallyImplyLeading: false,
+          title: const Text("Charity"),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.account_circle_sharp, size: 30),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (context) => const UserOrgProfile()),
+                );
+              },
+            ),
+          ],
+        ),
+        floatingActionButton: ExpandableFab(children: [
+          ActionButton(
+            icon: const Icon(
+              Icons.zoom_in_outlined,
+              color: Colors.white,
+            ),
+            onPressed: () {},
+          ),
+          ActionButton(
+            icon: const Icon(
+              Icons.settings,
+              color: Colors.white,
+            ),
+            onPressed: () {},
+          ),
+          ActionButton(
+                icon: const Icon(
+              Icons.add,
+              color: Colors.white,
+            ),
+            onPressed: () {},
+          ),
             ],
             distance: 69),
         body: SingleChildScrollView(
@@ -121,8 +144,13 @@ class _CharityOnGoingOrgState extends State<CharityOnGoingOrg> with SingleTicker
                                             height: 50,
                                           ),
                                           onTap: () {
-                                            Navigator.of(context).push(MaterialPageRoute(builder: (context)
-                                            => DetailCharity(charityDetailList: filteredList[index])));
+                                            Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        DetailCharity(
+                                                            charityDetailList:
+                                                                filteredList[
+                                                                    index])));
                                           },
                                           title: Text(filteredList[index].name),
                                           subtitle: Text("Charity location : " + filteredList[index].address),

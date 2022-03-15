@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:prototype_ui_mk2/charity_activities/donation_charities_detail.dart';
+import 'package:prototype_ui_mk2/profile/profile_user.dart';
 
 import '../models/charity_entity.dart';
 
@@ -17,21 +18,23 @@ class _EventSliderUserState extends State<EventSliderUser>{
 
   @override
   Widget build(BuildContext context) {
-
-    Widget buildListViewEventForCharity () {
+    Widget buildListViewEventForCharity(
+        String image, String title, String location) {
       return ListTile(
         trailing: const Icon(Icons.more_vert),
-        leading: Image.asset("assets/images/a.jpg"),
-        title: const Text("Dallas Morning News",
-            style: TextStyle(
+        leading: SizedBox(
+            width: 50,
+            height: 50,
+            child: Image.network(image, fit: BoxFit.fitHeight)),
+        title: Text(title,
+            style: const TextStyle(
                 fontFamily: "CentraleSansRegular",
-                fontSize: 18,
-                fontWeight: FontWeight.bold
-            )),
-        subtitle: const Text("Washington",
-            style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold)),
+        subtitle: Text(location,
+            style: const TextStyle(
               fontFamily: "CentraleSansRegular",
-              fontSize: 15,
+              fontSize: 14,
             )),
         onTap: () {},
       );
@@ -53,12 +56,12 @@ class _EventSliderUserState extends State<EventSliderUser>{
                     width: MediaQuery.of(context).size.width,
                     margin: const EdgeInsets.symmetric(horizontal: 5.0),
                     child: GestureDetector(
-                        child: Image.network(i, fit: BoxFit.fitWidth),
+                        child: Image.network(i, fit: BoxFit.fitHeight),
                         onTap: () {
                           Navigator.push<Widget>(
                             context,
-                            MaterialPageRoute(builder: (context)
-                            => CharityEventDetail(i),
+                            MaterialPageRoute(
+                              builder: (context) => CharityEventDetail(i),
                             ),
                           );
                         }));
@@ -72,6 +75,23 @@ class _EventSliderUserState extends State<EventSliderUser>{
         ));
 
     return Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color(0xFFe53547),
+          elevation: 1,
+          toolbarHeight: 55,
+          automaticallyImplyLeading: false,
+          title: const Text("News"),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.account_circle_sharp, size: 30),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const UserProfile()),
+                );
+              },
+            ),
+          ],
+        ),
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
@@ -79,20 +99,62 @@ class _EventSliderUserState extends State<EventSliderUser>{
                 height: 32,
               ),
               imageCarousel,
+              const SizedBox(height: 17),
+              const SizedBox(
+                height: 30,
+                child: Text("World news",
+                    style: TextStyle(
+                      fontFamily: "CentraleSansRegular",
+                      color: const Color(0xFFe53547),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                    )),
+              ),
               Container(
                 margin: const EdgeInsets.all(13),
-                height: 580,
                 width: 400,
                 child: Column(
                   children: <Widget>[
-                    buildListViewEventForCharity(),
-                    buildListViewEventForCharity(),
-                    buildListViewEventForCharity(),
-                    buildListViewEventForCharity(),
-                    buildListViewEventForCharity(),
-                    buildListViewEventForCharity(),
-                    buildListViewEventForCharity(),
-                    buildListViewEventForCharity(),
+                    buildListViewEventForCharity(
+                        "https://c.ndtvimg.com/2021-12/47jbek9o_elon-musk-reuters-240_120x90_20_December_21.jpg",
+                        "Elon Musk Donates 5 Million Tesla Shares To Unspecified Charities",
+                        "Agence France-Presse"),
+                    buildListViewEventForCharity(
+                        "https://c.ndtvimg.com/2022-02/mtdamom8_queen-elizabeth-ii-reuters_120x90_06_February_22.jpg",
+                        "UK's Queen Elizabeth Donates For Ukraine Refugees",
+                        "Agence France-Presse"),
+                    buildListViewEventForCharity(
+                        "https://i.gadgets360cdn.com/large/bitcoin_reuters_small_1645700657414.jpg",
+                        "Ukraine Raises 8 Million In Cryptocurrency Donations",
+                        "Reuters"),
+                    buildListViewEventForCharity(
+                        "https://c.ndtvimg.com/2022-01/cm9np8ko_afghanistan-generic_120x90_11_January_22.jpg",
+                        "US To Give 300 Million In Humanitarian Aid To Afghanistan",
+                        "Reuters"),
+                    buildListViewEventForCharity(
+                        "https://c.ndtvimg.com/2021-08/t8f8tnpk_driving-licence_240x180_12_August_21.jpg",
+                        "You Can Opt To Become An Organ Donor When Applying For Driving Licence",
+                        "Carandbike "),
+                    buildListViewEventForCharity(
+                        "https://i.ndtvimg.com/i/2018-03/milk_620x350_71521187705.jpg?im=FaceCrop,algorithm=dnn,width=345,height=250",
+                        "Milkmen In Assam Join Hands To Donate Part Of Income To Fund-Starved School",
+                        "Somdatta Saha"),
+                    buildListViewEventForCharity(
+                        "https://cache.careers360.mobi/media/presets/240X180/article_images/2021/8/4/2021-world-book-day-featured-image.jpg",
+                        "US-Based Psychotherapist Donates 1,100 Books To Thane's Institute Of Oriental Study",
+                        "Press Trust of India"),
+                    buildListViewEventForCharity(
+                        "https://c.ndtvimg.com/2021-07/2v73rac_bhutan-covid-vacccine-afp_120x90_27_July_21.jpg",
+                        "Bhutan Vaccinates Most Of Its Population After Donations",
+                        "Agence France-Presse"),
+                    buildListViewEventForCharity(
+                        "https://c.ndtvimg.com/2022-02/tvn8s20g_hiroshi-mikitani-instagram_120x90_27_February_22.jpg",
+                        "Japanese Billionaire Hiroshi Mikitani Donates 8.7 Million To Ukraine",
+                        "Agence France-Presse"),
+                    buildListViewEventForCharity(
+                        "https://i.gadgets360cdn.com/large/starlink_terminal_image_small_spacex_1633352677845.jpg",
+                        "Elon Musk Donates 50 Satellite Terminals to Help Reconnect Volcano-Damaged Tonga",
+                        "Agence France-Presse"),
                   ],
                 ),
               )

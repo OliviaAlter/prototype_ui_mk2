@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../charity/charity_builder.dart';
-import '../charity/charity_event_detail.dart';
 import '../donation/donation_user.dart';
 
 class CharityEventDetail extends StatefulWidget {

@@ -5,25 +5,23 @@ import 'package:prototype_ui_mk2/login/login.dart';
 import 'package:prototype_ui_mk2/profile/edit_profile_user.dart';
 import 'package:prototype_ui_mk2/profile/profile_org.dart';
 
-import '../login/login_nav.dart';
 import '../profile/edit_profile_org.dart';
 import '../profile/profile_user.dart';
 
 AppBar buildAppBarUserProfile(BuildContext context){
   return AppBar(
       centerTitle: true,
-      title: const Text("Profile",
+      title: const Text(
+        "User profile",
         textAlign: TextAlign.center,
-        style: TextStyle(
-            fontSize: 20
-        ),
+        style: TextStyle(fontSize: 20),
       ),
       automaticallyImplyLeading: false,
       backgroundColor: const Color(0xFFe53547),
       elevation: 1,
       toolbarHeight: 55,
       leading: IconButton(
-        icon: const Icon(Icons.arrow_back, size : 30),
+        icon: const Icon(Icons.arrow_back, size: 30),
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(builder: (context) => const HomePageUser()),
@@ -127,18 +125,17 @@ AppBar buildAppBarUserProfileEditMode(BuildContext context){
 AppBar buildAppBarOrgProfile(BuildContext context){
   return AppBar(
       centerTitle: true,
-      title: const Text("Profile",
+      title: const Text(
+        "Organization profile",
         textAlign: TextAlign.center,
-        style: TextStyle(
-            fontSize: 20
-        ),
+        style: TextStyle(fontSize: 20),
       ),
       automaticallyImplyLeading: false,
       backgroundColor: const Color(0xFFe53547),
       elevation: 1,
       toolbarHeight: 55,
       leading: IconButton(
-        icon: const Icon(Icons.arrow_back, size : 30),
+        icon: const Icon(Icons.arrow_back, size: 30),
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(builder: (context) => const HomePageOrg()),

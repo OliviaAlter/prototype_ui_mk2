@@ -2,8 +2,9 @@ import '../models/user_entity.dart';
 
 class UserOrgPreference {
   static const myUser = User(
-    imagePath: 'https://this-person-does-not-exist.com/img/avatar-f4d050801c6fbbbf5087fddffe6c4dc9.jpg',
-    name: "Stevo Thana (Org)",
+    imagePath:
+        'https://www.whichfaceisreal.com/fakeimages/image-2019-02-18_190058.jpeg',
+    name: "Stevo Thana",
     email: "xyz@earth.abc",
     about: "Itaque earum rerum hic tenetur a sapiente delectus.",
   );

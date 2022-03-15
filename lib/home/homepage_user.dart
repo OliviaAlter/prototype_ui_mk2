@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:prototype_ui_mk2/profile/profile_user.dart';
 
 import '../charity_activities/donation_charities_slider_user.dart';
 import '../charity_activities/user_view_charity.dart';
+import '../charity_history/user_charity_history.dart';
 
 class HomePageUser extends StatefulWidget {
   const HomePageUser({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class _HomePageUserState extends State<HomePageUser> {
   final List<Widget> _children = [
     const EventSliderUser(),
     const CharityOnGoingUser(),
-    Container(), //
+    const CharityHistoryUser(), //
   ];
 
   void onTabTapped(int index){
@@ -28,22 +28,6 @@ class _HomePageUserState extends State<HomePageUser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar (
-        backgroundColor: const Color(0xFFe53547),
-        elevation: 1,
-        toolbarHeight: 55,
-        automaticallyImplyLeading: false,
-        actions: <Widget> [
-          IconButton(
-            icon: const Icon(Icons.account_circle_sharp, size : 30),
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const UserProfile()),
-              );
-            },
-          ),
-        ],
-      ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,
         currentIndex: _currentIndex,

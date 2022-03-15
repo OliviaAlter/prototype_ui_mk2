@@ -39,9 +39,12 @@ class _ThankYouUserSplashState extends State<ThankYouUserSplash> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget> [
+            children: <Widget>[
+              const SizedBox(
+                height: 45,
+              ),
               SizedBox(
-                height: 250,
+                height: 200,
                 child: Image.asset("assets/images/a.jpg", fit: BoxFit.contain),
               ),
               const SizedBox(

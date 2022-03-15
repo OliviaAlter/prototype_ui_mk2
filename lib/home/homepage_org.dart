@@ -3,7 +3,7 @@ import 'package:line_icons/line_icons.dart';
 
 import '../charity_activities/donation_charities_slider_org.dart';
 import '../charity_activities/org_view_charity.dart';
-import '../profile/profile_org.dart';
+import '../charity_history/org_charity_history.dart';
 
 class HomePageOrg extends StatefulWidget {
   const HomePageOrg({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class _HomePageOrgState extends State<HomePageOrg> {
   final List<Widget> _children = [
     const EventSliderOrg(),
     const CharityOnGoingOrg(),
-    Container(), //
+    const CharityHistoryOrg(), //
   ];
 
   void onTabTapped(int index){
@@ -29,22 +29,6 @@ class _HomePageOrgState extends State<HomePageOrg> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar (
-        backgroundColor: const Color(0xFFe53547),
-        elevation: 1,
-        toolbarHeight: 55,
-        automaticallyImplyLeading: false,
-        actions: <Widget> [
-          IconButton(
-            icon: const Icon(Icons.account_circle_sharp, size : 30),
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const UserOrgProfile()),
-              );
-            },
-          ),
-        ],
-      ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,
         currentIndex: _currentIndex,

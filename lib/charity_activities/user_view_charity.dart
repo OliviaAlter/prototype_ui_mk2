@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../basic_data/charity_event_data.dart';
 import '../models/charity_entity.dart';
+import '../profile/profile_user.dart';
 import '../widget/charity_detail_widget.dart';
-
 
 class CharityOnGoingUser extends StatefulWidget {
   const CharityOnGoingUser({Key? key}) : super(key: key);
@@ -46,76 +46,102 @@ class _CharityOnGoingUserState extends State<CharityOnGoingUser>{
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: <Widget>[
-          const SizedBox(
-            height: 25,
-          ),
-          TextField(
-            decoration: const InputDecoration(
-              contentPadding: EdgeInsets.all(15.0),
-              hintText: 'Filter charities by name or address',
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color(0xFFe53547),
+          elevation: 1,
+          toolbarHeight: 55,
+          automaticallyImplyLeading: false,
+          title: Text("Charity"),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.account_circle_sharp, size: 30),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const UserProfile()),
+                );
+              },
             ),
-            onChanged: (string) {
-              setState(() {
-                filteredList = charityList
-                    .where((charity) => (charity.name
-                    .toLowerCase()
-                    .contains(string.toLowerCase()) ||
-                    charity.address.toLowerCase().contains(string.toLowerCase())))
-                    .toList();
-              });
-            },
+          ],
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              const SizedBox(
+                height: 25,
+              ),
+              TextField(
+                decoration: const InputDecoration(
+                  contentPadding: EdgeInsets.all(15.0),
+                  hintText: 'Filter charities by name or address',
+                ),
+                onChanged: (string) {
+                  setState(() {
+                    filteredList = charityList
+                        .where((charity) => (charity.name
+                                .toLowerCase()
+                                .contains(string.toLowerCase()) ||
+                            charity.address
+                                .toLowerCase()
+                                .contains(string.toLowerCase())))
+                        .toList();
+                  });
+                },
+              ),
+              Container(
+                margin: const EdgeInsets.all(18),
+                height: 600,
+                width: 400,
+                child: Column(
+                  children: <Widget>[
+                    Expanded(
+                      child: ListView.builder(
+                          itemCount: filteredList.length,
+                          itemBuilder: (context, index) {
+                            return Card(
+                                child: Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        const SizedBox(
+                                          height: 5.0,
+                                        ),
+                                        ListTile(
+                                          leading: Image.network(
+                                            filteredList[index].imageUrl,
+                                            fit: BoxFit.cover,
+                                            width: 50,
+                                            height: 50,
+                                          ),
+                                          onTap: () {
+                                            Navigator.of(context).push(
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        DetailCharity(
+                                                            charityDetailList:
+                                                                filteredList[
+                                                                    index])));
+                                          },
+                                          title: Text(filteredList[index].name),
+                                          subtitle: Text("Charity location : " +
+                                              filteredList[index].address),
+                                        )
+                                      ],
+                                    )));
+                          }),
+                    ),
+                    const SizedBox(
+                      height: 45.0,
+                    ),
+                  ],
+                ),
+              )
+            ],
           ),
-          Container(
-            margin: const EdgeInsets.all(18),
-            height: 600,
-            width: 400,
-            child: Column(
-              children: <Widget>[
-                Expanded(
-                  child: ListView.builder(
-                      itemCount: filteredList.length,
-                      itemBuilder: (context, index) {
-                        return Card(
-                            child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    const SizedBox(
-                                      height: 5.0,
-                                    ),
-                                    ListTile(
-                                      leading: Image.network(
-                                        filteredList[index].imageUrl,
-                                        fit: BoxFit.cover,
-                                        width: 50,
-                                        height: 50,
-                                      ),
-                                      onTap: () {
-                                        Navigator.of(context).push(MaterialPageRoute(builder: (context)
-                                        => DetailCharity(charityDetailList: filteredList[index])));
-                                      },
-                                      title: Text(filteredList[index].name),
-                                      subtitle: Text("Charity location : " + filteredList[index].address),
-                                    )
-                                  ],
-                                )
-                            )
-                        );
-                      }),
-                ),
-                const SizedBox(
-                  height: 45.0,
-                ),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
+        ));
   }
 }

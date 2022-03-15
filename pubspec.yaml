@@ -79,6 +79,14 @@ flutter:
     - assets/images/a.jpg
     - assets/images/calendar.png
     - assets/images/dollars.png
+    - assets/images/news1.jpg
+    - assets/images/news2.jpg
+    - assets/images/news3.jpg
+    - assets/images/news4.jpg
+    - assets/images/news5.jpg
+    - assets/images/news6.jpg
+    - assets/images/news7.jpg
+    - assets/images/news8.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
