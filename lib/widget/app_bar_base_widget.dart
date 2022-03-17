@@ -212,7 +212,6 @@ AppBar buildAppBarOrgProfile(BuildContext context){
   );
 }
 
-
 AppBar buildAppBarOrgProfileEditMode(BuildContext context){
   return AppBar(
     centerTitle: true,
@@ -236,7 +235,6 @@ AppBar buildAppBarOrgProfileEditMode(BuildContext context){
     ),
   );
 }
-
 
 AppBar buildAppBarSearch(BuildContext context){
   return AppBar(
